@@ -28,8 +28,8 @@ body {
 /* Background for mobile devices */
 @media only screen and (max-width: 767px) {
   .bg {
-    background-image: url(assets/yip.jpg);
-    background-size: fill;
+    background-image: url("assets/yip.jpg");
+    background-size: cover;
   }
 }
 
