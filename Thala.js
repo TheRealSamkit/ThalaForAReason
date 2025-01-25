@@ -1,5 +1,7 @@
 function checkThala() {
-  let thalaInput = document.getElementById("Get-Reason").value.trim();
+  let thalaInput = sanitizeAns(
+    document.getElementById("Get-Reason").value.trim()
+  );
   document.getElementById("Get-Reason").value = "";
 
   // Utility to handle success cases
@@ -84,6 +86,13 @@ function numerologyConnection(input) {
   }
 
   return false;
+}
+
+function sanitizeAns(input) {
+  const regex = /^[a-zA-Z0-9 ]+$/;
+  input = input.replace(/[^\w\s]/gi, "");
+  input = input.replace(/<\/?[^>]+(>|$)/g, "");
+  return regex.test(input);
 }
 
 function wordplayConnection(input) {
